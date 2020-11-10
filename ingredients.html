@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Ingredients</title>
+		<script type="text/javascript" src="ingredients.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+		<h1>Search ingredients</h1>
+	</head>
+	<body>
+		<form>
+			<label for="ingredients">Search by name</label>
+			<input type="text" id="ingredients" name="ingredients"><br>
+			<label for="barcode">Search by barcode</label>
+			<input type="text" id="barcode" name="barcode"><br>
+		</form>
+		<button onclick="searchapi()">Search</button>
+		<div id=results>
+		</div>
+	</body>
+</html>
