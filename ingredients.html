@@ -1,12 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Ingredients</title>
-		<script type="text/javascript" src="ingredients.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"> <!--Swiper-->
+		<!--link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> <!--Swiper-->
+		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
 		<h1>Search ingredients</h1>
 	</head>
+
 	<body>
 		<form>
 			<label for="ingredients">Search by name</label>
@@ -15,7 +19,16 @@
 			<input type="text" id="barcode" name="barcode"><br>
 		</form>
 		<button onclick="searchapi()">Search</button>
-		<div id=results>
-		</div>
+		<section class="section-food">
+			<div class="row swiper-container" id="foodBox">
+				<div class="swiper-wrapper" id="swipeWrap">
+					<!--Recipes here-->
+				</div>
+			</div>
+		</section>
+
+		<script src="resources/js/ingredients.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script> <!--Swiper-->
+		<!--script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> <!--Swiper-->
 	</body>
 </html>
