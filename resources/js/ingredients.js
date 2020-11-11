@@ -2,12 +2,14 @@ var search;
 var searchName;
 var searchCode;
 var mySwiper;
+var countResults
+var nextPage
 
 async function searchApi() {
 	searchName = document.getElementById('ingredients').value;
 	searchCode = document.getElementById('barcode').value;
 	if (searchName.length != 0 && searchCode.length != 0) {
-		search = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + searchname
+		search = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + searchName
 			+ "&upc=" + searchCode + "&app_id=9323297d&app_key=5d94ad408faa01064526c01a4ea278ec";
 	} else if (searchName.length != 0 && searchCode.length == 0) {
 		search = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + searchName
@@ -16,6 +18,7 @@ async function searchApi() {
 		search = "https://api.edamam.com/api/food-database/v2/parser?upc=" + searchCode
 			+ "&app_id=9323297d&app_key=5d94ad408faa01064526c01a4ea278ec";
 	}
+	console.log(search)
 
 	//use jquery JSON shortcut
     $.getJSON(search, function(jsondata){
@@ -39,9 +42,9 @@ async function searchApi() {
 /* Create the results html */
 function findFood(jsondata){
 	//clear the contents of swiper-wrapper
-	$("#foodSwipeWrap").html("");
+	$("#ingredientSwipeWrap").html("");
 	//get the number of results
-	var countResults = Object.keys(jsondata.hints).length;
+	countResults = Object.keys(jsondata.hints).length;
     //iterate through the results collection
     for (var i = 0; i < countResults; i++){
         //get and save the information needed
@@ -54,4 +57,7 @@ function findFood(jsondata){
         //add the code to the box
 		$('#ingredientSwipeWrap').append(string);
 	}
+	
 }
+
+
