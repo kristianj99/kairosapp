@@ -15,6 +15,9 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 5px;
+    width: 225px;
+    height: fit-content;
+    object-fit: cover;
 }
 
 .swiper-slide {
