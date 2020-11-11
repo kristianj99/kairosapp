@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Recipes</title>
+		<script type="text/javascript" src="recipes.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+		<h1>Search Recipes</h1>
+	</head>
+	<body>
+		<form>
+			<label for="recipesearch">Search by name</label>
+			<input type="text" id="recipesearch" name="recipesearch"><br>
+		</form>
+		<button onclick="searchapi()">Search</button><br>
+		<form>
+			<label for="ingredientsearch">Search by ingredient</label>
+			<input type="text" id="ingredientsearch" name="ingredientsearch"><br>
+		</form>
+		<button onclick="searchapiingr()">Search</button><br>
+		<div id=results>
+		</div>
+	</body>
+</html>
