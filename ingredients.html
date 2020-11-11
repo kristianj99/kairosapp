@@ -2,23 +2,27 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Ingredients</title>
-		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"> <!--Swiper-->
-		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
-		<h1>Search ingredients</h1>
+		<div id="header">
+			<title>Ingredients</title>
+			<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"> <!--Swiper-->
+			<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+			<img src="https://kairosapp.co.uk/wp-content/uploads/2020/04/cropped-Logo-512-square-1.png" width="40" height="40" /><h1>Search ingredients</h1>
+		</div>
 	</head>
 
 	<body>
 		<section class="section-search">
-			<form>
-				<label for="ingredients">Search by name</label>
-				<input type="text" id="ingredients" name="ingredients"><br>
-				<label for="barcode">Search by barcode</label>
-				<input type="text" id="barcode" name="barcode"><br>
-			</form>
-			<button onclick="searchApi()">Search</button>
+			<div class="forms">
+				<form>
+					<label for="ingredients">Search by name</label>
+					<input type="text" id="ingredients" name="ingredients"><br>
+					<label for="barcode">Search by barcode</label>
+					<input type="text" id="barcode" name="barcode"><br>
+				</form>
+				<button onclick="searchApi()">Search</button>
+			</div>	
 		</section>
 		<section class="section-results">
 			<div class="swiper-container" id="ingredientBox">
@@ -27,6 +31,7 @@
 				</div>
 			</div>
 		</section>
+		<button onclick="NextPage()">Next Page</button>
 
 		<script src="resources/js/ingredients.js"></script>
 		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script> <!--Swiper-->
