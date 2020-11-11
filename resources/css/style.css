@@ -31,3 +31,35 @@
     margin-bottom: 13px;
     text-align: center;
 }
+
+head {
+	font-family: arial;
+}
+
+body {
+	font-family:arial;
+}
+
+#header {
+	background-color: lightgreen;
+	vertical-align:middle;
+	padding: 15px;
+	overflow: auto;
+}
+
+h1 {
+	display: inline-block;
+}
+.forms {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	display: table;
+	float: left;
+	clear: both;
+}
+
+.forms input {
+	box-sizing: border-box;
+}
