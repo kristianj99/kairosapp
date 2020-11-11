@@ -4,7 +4,6 @@
 		<meta charset="utf-8">
 		<title>Ingredients</title>
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"> <!--Swiper-->
-		<!--link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> <!--Swiper-->
 		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
@@ -12,23 +11,24 @@
 	</head>
 
 	<body>
-		<form>
-			<label for="ingredients">Search by name</label>
-			<input type="text" id="ingredients" name="ingredients"><br>
-			<label for="barcode">Search by barcode</label>
-			<input type="text" id="barcode" name="barcode"><br>
-		</form>
-		<button onclick="searchapi()">Search</button>
-		<section class="section-food">
-			<div class="row swiper-container" id="foodBox">
-				<div class="swiper-wrapper" id="swipeWrap">
-					<!--Recipes here-->
+		<section class="section-search">
+			<form>
+				<label for="ingredients">Search by name</label>
+				<input type="text" id="ingredients" name="ingredients"><br>
+				<label for="barcode">Search by barcode</label>
+				<input type="text" id="barcode" name="barcode"><br>
+			</form>
+			<button onclick="searchApi()">Search</button>
+		</section>
+		<section class="section-results">
+			<div class="swiper-container" id="ingredientBox">
+				<div class="swiper-wrapper" id="ingredientSwipeWrap">
+					<!--Results here-->
 				</div>
 			</div>
 		</section>
 
 		<script src="resources/js/ingredients.js"></script>
 		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script> <!--Swiper-->
-		<!--script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> <!--Swiper-->
 	</body>
 </html>

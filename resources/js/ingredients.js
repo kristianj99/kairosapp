@@ -1,19 +1,19 @@
 var search;
-var searchname;
-var searchcode;
+var searchName;
+var searchCode;
 var mySwiper;
 
-async function searchapi() {
-	searchname = document.getElementById('ingredients').value;
-	searchcode = document.getElementById('barcode').value;
-	if (searchname.length != 0 && searchcode.length != 0) {
+async function searchApi() {
+	searchName = document.getElementById('ingredients').value;
+	searchCode = document.getElementById('barcode').value;
+	if (searchName.length != 0 && searchCode.length != 0) {
 		search = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + searchname
-			+ "&upc=" + searchcode + "&app_id=9323297d&app_key=5d94ad408faa01064526c01a4ea278ec";
-	} else if (searchname.length != 0 && searchcode.length == 0) {
-		search = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + searchname
+			+ "&upc=" + searchCode + "&app_id=9323297d&app_key=5d94ad408faa01064526c01a4ea278ec";
+	} else if (searchName.length != 0 && searchCode.length == 0) {
+		search = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + searchName
 			+ "&app_id=9323297d&app_key=5d94ad408faa01064526c01a4ea278ec";
-	} else if (searchname.length == 0 && searchcode.length != 0) {
-		search = "https://api.edamam.com/api/food-database/v2/parser?upc=" + searchcode
+	} else if (searchName.length == 0 && searchCode.length != 0) {
+		search = "https://api.edamam.com/api/food-database/v2/parser?upc=" + searchCode
 			+ "&app_id=9323297d&app_key=5d94ad408faa01064526c01a4ea278ec";
 	}
 
@@ -24,7 +24,7 @@ async function searchapi() {
 		console.log(jsondata)
 	});
 	
-	//create a new swiper
+	//create a new swiper (with delay)
 	setTimeout(function() {
 		mySwiper = new Swiper('.swiper-container', {
 			observer: true,
@@ -36,21 +36,22 @@ async function searchapi() {
 	}, 500);
 }
 
-/* Create the recipes code */
+/* Create the results html */
 function findFood(jsondata){
 	//clear the contents of swiper-wrapper
-	$("#swipeWrap").html("");
-	var countKey = Object.keys(jsondata).length;
+	$("#foodSwipeWrap").html("");
+	//get the number of results
+	var countResults = Object.keys(jsondata.hints).length;
     //iterate through the results collection
-    for (var i = 0; i < countKey; i++){
+    for (var i = 0; i < countResults; i++){
         //get and save the information needed
         var name = jsondata.hints[i].food.label;
 		var image = jsondata.hints[i].food.image;
-        //create the string containing the HTML code
-        var string = '<div class="food swiper-slide" id="food-' + (i) + '">'
+        //create a string containing the HTML code
+        var string = '<div class="result swiper-slide" id="ing-' + i + '">'
 			+ '<img src="' + image + '">'
-            + '<div class="food-description"><h4>' + name + '</h4></div></div>';
+            + '<div class="result-description"><h4>' + name + '</h4></div></div>';
         //add the code to the box
-		$('#swipeWrap').append(string);
+		$('#foodSwipeWrap').append(string);
 	}
 }
