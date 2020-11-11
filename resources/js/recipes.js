@@ -1,16 +1,16 @@
 var search;
-var searchname;
+var searchName;
 var lastResult = 0;
 var nResults = 30;
 var mySwiper;
 
 async function searchApi() {
-	if (searchname != 0){
-		searchname = document.getElementById('recipesearch').value;
-		search = "https://api.edamam.com/search?q=" + searchname
+	searchName = document.getElementById('recipeSearch').value;
+	if (searchName.length != 0){
+		search = "https://api.edamam.com/search?q=" + searchName
 			+ "&app_id=5a49e3a7&app_key=af17c370ff82a555da32682b4bc8e58b&from="
 			+ lastResult + "&to=" + nResults;
-	} else {console.log("insert something")}
+	}
 	
 	//use jquery JSON shortcut
     $.getJSON(search, function(jsondata){

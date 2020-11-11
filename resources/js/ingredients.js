@@ -52,6 +52,6 @@ function findFood(jsondata){
 			+ '<img src="' + image + '">'
             + '<div class="result-description"><h4>' + name + '</h4></div></div>';
         //add the code to the box
-		$('#foodSwipeWrap').append(string);
+		$('#ingredientSwipeWrap').append(string);
 	}
 }
